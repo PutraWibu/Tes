@@ -1,313 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yaudah Iya</title>
 
+    <link rel="icon" href="/images/user.jpg">
+
+    <!-- ICONS & FONTS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
-    <link href="/images/user.jpg" rel="icon">
-    <link href="/images/user.jpg" rel="apple-touch-icon">
-
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- VENDOR CSS -->
     <link href="https://ferdiz-afk.github.io/Nice/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://ferdiz-afk.github.io/Nice/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="https://ferdiz-afk.github.io/Nice/assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://dropways.github.io/deskapp/vendors/styles/core.css" />
-    <link rel="stylesheet" type="text/css" href="https://dropways.github.io/deskapp/vendors/styles/icon-font.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://dropways.github.io/deskapp/vendors/styles/style.css" />
+
+    <link rel="stylesheet" href="https://dropways.github.io/deskapp/vendors/styles/core.css">
+    <link rel="stylesheet" href="https://dropways.github.io/deskapp/vendors/styles/icon-font.min.css">
+    <link rel="stylesheet" href="https://dropways.github.io/deskapp/vendors/styles/style.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="/style.css">
+
+    <!-- FORCE CLICK FIX -->
+    <style>
+        *::before,
+        *::after {
+            pointer-events: none !important;
+        }
+
+        a, button, i {
+            pointer-events: auto !important;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
-        <div class="content">
-            <header id="header" class="header fixed-top d-flex align-items-center" style="width:100%">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div class="toggles">
-                        <i id="toggle-icon" class="bi bi-list toggle-sidebar-btn"></i>
+
+<header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+            <li class="nav-item pe-3">
+                <img src="/images/user.jpg" class="rounded-circle" width="40">
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav">
+        <h1 class="text-center mt-4">Yaudah <span class="text-primary">Iya</span></h1>
+
+        <li class="nav-heading">PAGE LIST</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/mecha-ai.html">
+                <i class="bi bi-robot"></i><span>Mecha AI</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/gemini-ai.html">
+                <i class="bi bi-moon-stars"></i><span>Gemini AI</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/spotify-player.html">
+                <i class="bi bi-spotify"></i><span>Spotify Player</span>
+            </a>
+        </li>
+
+        <li class="nav-heading">Contact</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="https://wa.me/62895415497664" target="_blank">
+                <i class="bi bi-whatsapp"></i><span>WhatsApp</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="https://www.instagram.com/surya_skylark05" target="_blank">
+                <i class="bi bi-instagram"></i><span>Instagram</span>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+<main id="main" class="main">
+    <section class="section dashboard">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card info-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Time</h5>
+                        <div id="browser_info">00:00</div>
                     </div>
                 </div>
-                <nav class="header-nav ms-auto">
-                    <ul class="d-flex align-items-center">
-                        <li class="nav-item d-block d-lg-none">
-                        </li>
-
-                        <!--
-                        <li class="nav-item dropdown">
-                        <a class="nav-link nav-icon" data-bs-toggle="dropdown" style="margin-right: -15px;">
-                        <i id="theme-btn" class="icon material-symbols-rounded">light_mode</i>
-                        </a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link nav-icon" onclick="toggleAudio()" data-bs-toggle="dropdown" style="margin-right: -15px;">
-                                <i class="bi bi-music-note-beamed" id="music-icon"></i>
-                            </a>
-                        </li>
-                        -->
-
-                        <li class="nav-item dropdown pe-3">
-                            <a class="nav-link nav-profile d-flex align-items-center pe-0">
-                                <div class="position-relative">
-                                    <img class="rounded-circle" src="/images/user.jpg" alt="logo">
-                                   <!--
-                                   <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-                                   -->
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
-                </nav>
-            </header>
-            <aside id="sidebar" class="sidebar" style="z-index:122;">
-                <ul class="sidebar-nav" id="sidebar-nav">
-                    <h1 class="text-2xl text-center mt-4">Yaudah&nbsp;<span class="text-primary">Iya</span></h1>
-                    <div class="mt-8">
-                        <div class="mb-4 relative lg:hidden false">
-                        </div>
-
-                        <li class="nav-heading">PAGE LIST</li>
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/mecha-ai.html')">
-                                <i class="bi bi-robot"></i>
-                                <span>Mecha AI</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/gemini-ai.html')">
-                                <i class="bi bi-moon-stars"></i>
-                                <!-- <i class="bi bi-slack"></i> -->
-                                <span>Gemini AI</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/mecha-store.html')">
-                                <i class="bi bi-shop-window"></i>
-                                <span>Mecha Store</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/flowers-name.html')">
-                                <i class="bi bi-flower1">
-                                </i>
-                                <span>Flowers Name</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/weather-app.html')">
-                                <i class="bi bi-cloud-lightning-rain-fill">
-                                </i>
-                                <span>Weather App</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/currency-converter.html')">
-                                <i class="bi bi-currency-exchange">
-                                </i>
-                                <span>Currency Converter</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/image-gallery.html')">
-                                <i class="bi bi-images">
-                                </i>
-                                <span>Image Gallery</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/image-editor.html')">
-                                <i class="bi bi-image-fill">
-                                </i>
-                                <span>Image Editor</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/random-quote.html')">
-                                <i class="bi bi-quote">
-                                </i>
-                                <span>Random Quote</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/beautify-code.html')">
-                                <i class="bi bi-code-slash">
-                                </i>
-                                <span>Beautify Code</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/html-encrypter.html')">
-                                <i class="ion ion-social-html5">
-                                </i>
-                                <span>HTML Encrypter</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/javascript-obfuscator.html')">
-                                <i class="ion ion-social-javascript">
-                                </i>
-                                <span>Javascript Obfuscator</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/spotify-player.html')">
-                                <i class="bi bi-spotify">
-                                </i>
-                                <span>Spotify Player</span>
-                            </a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/maukah.html')">
-                                <i class="bi bi-emoji-heart-eyes">
-                                </i>
-                                <span>Maukah Kamu</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" onclick="navigateTo('/donation.html')">
-                                <i class="dw dw-money-1">
-                                </i>
-                                <span>Donation</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-heading">Contact</li>
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" href="https://wa.me/62895415497664" target="_blank">
-                                <i class="bi bi-whatsapp"></i>
-                                <span>WhatsApp</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link collapsed" href="https://www.instagram.com/surya_skylark05" target="_blank">
-                                <i class="bi bi-instagram"></i>
-                                <span>Instagram</span>
-                            </a>
-                        </li>
-
-                </ul>
-            </aside>
-            <main id="main" class="main">
-                <section class="section dashboard">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="content-wrapper text-center col-xxl-4 col-xl-12">
-                                </div>
-                                <div class="col-xxl-4 col-md-6">
-                                    <div class="card info-card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Time Information</h5>
-                                            <div class="d-flex align-items-center">
-                                                <div class="card-icon alert alert-primary rounded-circle d-flex align-items-center justify-content-center">
-                                                    <i class="bi bi-clock"></i>
-                                                </div>
-                                                <div class="ps-3">
-                                                    <div class="weight-700 font-24 text-dark" id="browser_info">000</div>
-                                                    <div class="font-14 text-secondary weight-500" id="browser_sholat">waktu</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-md-6">
-                                    <div class="card info-card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Visitors Information</h5>
-                                            <div class="d-flex align-items-center">
-                                                <div class="card-icon alert alert-info rounded-circle d-flex align-items-center justify-content-center">
-                                                    <i class="bi bi-eye"></i>
-                                                </div>
-                                                <div class="ps-3">
-                                                    <div class="weight-700 font-24 text-dark" id="visitor-count">0</div>
-                                                    <div class="font-14 text-secondary weight-500">visitors</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-xl-12">
-                                    <div class="card info-card ">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Battery Information</h5>
-                                            <div class="d-flex align-items-center">
-                                                <div class="card-icon alert alert-success rounded-circle d-flex align-items-center justify-content-center">
-                                                    <i class="bi bi-battery-full" id="battery-icon"></i>
-                                                </div>
-                                                <div class="ps-3">
-                                                    <div class="weight-700 font-24 text-dark" id="battery-level">%</div>
-                                                    <div class="font-14 text-secondary weight-500" id="charging-status">Discharging</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-xl-12">
-                                    <a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
-                                        <div class="card-body">
-                                            <strong><i class="bi bi-people-fill"></i>&nbsp;Special Thanks To:</strong>
-                                            <div class="row">
-                                                <div class="col-auto">
-                                                    <ul>
-                                                        <li>• Allah SWT.</li>
-                                                        <li>• Nabi Muhammad Saw.</li>
-                                                        <li>• My Parents.</li>
-                                                        <li>• My Self</li>
-                                                        <li>• Tim Berners-Lee</li>
-                                                        <li>• Håkon Wium Lie</li>
-                                                        <li>• Brendan Eich</li>
-                                                        <li>• ExpressJS</li>
-                                                        <li>• Bootstrap</li>
-                                                        <li>• Vercel App</li>
-                                                        <!--
-                                                        <li>• The person who helped share this API</li>
-                                                        -->
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-        </div>
-        </div>
-        <footer id="footer" class="footer">
-            <div class="copyright">
-                Copyright &copy;
-                <span id="copyrightYearRange"></span>
-                SuryaDev.<br>All rights reserved.
             </div>
-        </footer>
-        <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
-            <i class="bi bi-arrow-up-short"></i>
-        </a>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
-        <script src="/script.js"></script>
 
+            <div class="col-md-4">
+                <div class="card info-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Visitors</h5>
+                        <div id="visitor-count">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card info-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Battery</h5>
+                        <div id="battery-level">%</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="copyright">
+        © <span id="copyrightYearRange"></span> SuryaDev
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+
+<script>
+    document.getElementById("copyrightYearRange").innerText =
+        new Date().getFullYear();
+</script>
+
+</body>
 </html>
